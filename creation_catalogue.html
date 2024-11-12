@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head> 
+<head>
     <meta charset="UTF-8">
     <title>Création de Catalogue</title>
     <!-- Inclusion de Bootstrap pour le style et la mise en page -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Inclusion de Bootstrap pour un style rapide -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
@@ -11,7 +13,6 @@
     <div class="container">
         <h2>Créer un Catalogue</h2>
         <!-- Formulaire pour la création d'un nouveau catalogue -->
-        <!-- Méthode POST utilisée pour envoyer les données en toute sécurité au fichier PHP "create_catalog.php" -->
         <form action="create_catalog.php" method="POST">
             <!-- Champ pour le nom du catalogue -->
             <div class="form-group">
@@ -35,5 +36,8 @@
             <button type="submit" class="btn btn-primary">Créer</button>
         </form>
     </div>
+
+    <!-- Lien vers le fichier JavaScript pour le formulaire de création de catalogue -->
+    <script src="form_catalog.js"></script>
 </body>
 </html>
