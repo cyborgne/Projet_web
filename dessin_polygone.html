@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Étiquetage</title>
+    <!-- Lien vers le fichier CSS -->
+    <link rel="stylesheet" href="styles.css">
     <style>
         /* Ajout d'une bordure noire autour du canvas pour mieux visualiser la zone */
         #canvas { 
@@ -15,47 +17,13 @@
     <!-- Canvas pour afficher l'image et dessiner les polygones -->
     <canvas id="canvas" width="600" height="400"></canvas>
 
-    <script>
-        // Récupère l'élément canvas du DOM
-        const canvas = document.getElementById('canvas');
-        // Initialise le contexte 2D du canvas pour dessiner dessus
-        const ctx = canvas.getContext('2d');
-        // Tableau pour stocker les points (coordonnées x et y) des clics
-        const points = [];
+    <!-- Formulaire pour soumettre l'étiquette -->
+    <form id="labelForm" action="submit_label.php" method="POST">
+        <input type="hidden" id="points" name="points">
+        <button type="button" onclick="submitLabel()" class="btn btn-primary">Soumettre l'étiquette</button>
+    </form>
 
-        // Ajoute un "écouteur d'événements" pour détecter les clics sur le canvas
-        canvas.addEventListener('click', (e) => {
-            // Récupère la position x et y du clic
-            const x = e.offsetX;
-            const y = e.offsetY;
-
-            // Ajoute les coordonnées du point au tableau 'points' au format "x,y"
-            points.push(`${x},${y}`);
-
-            // Dessine un petit carré pour marquer le point cliqué
-            ctx.fillRect(x - 2, y - 2, 4, 4); // Marqueur
-
-            // Si plusieurs points sont définis, trace une ligne entre les points successifs
-            if (points.length > 1) {
-                ctx.lineTo(x, y); // Trace une ligne jusqu'au dernier point
-                ctx.stroke(); // Applique le trait de la ligne
-            } else {
-                // Si c'est le premier point, commence un nouveau chemin de dessin
-                ctx.beginPath();
-                ctx.moveTo(x, y); // Place le curseur sur le point de départ
-            }
-        });
-
-        // Fonction pour envoyer les coordonnées des points du polygone au formulaire
-        function submitLabel() {
-            // Transforme le tableau 'points' en une chaîne de caractères avec les coordonnées
-            // séparées par ':' (par exemple "10,25:90,50:10,77")
-            const pointsStr = points.join(':');
-            // Place la chaîne des points dans un champ caché du formulaire avant l'envoi
-            document.getElementById('points').value = pointsStr;
-            // Soumet le formulaire pour envoyer les données au serveur
-            document.getElementById('labelForm').submit();
-        }
-    </script>
+    <!-- Lien vers le fichier JavaScript pour l'étiquetage -->
+    <script src="etiquetage.js"></script>
 </body>
 </html>
