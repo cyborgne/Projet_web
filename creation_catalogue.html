@@ -1,24 +1,37 @@
-<!-- form_catalog.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head> 
     <meta charset="UTF-8">
     <title>Création de Catalogue</title>
+    <!-- Inclusion de Bootstrap pour le style et la mise en page -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
+    <!-- Conteneur principal centré pour une mise en page ordonnée -->
     <div class="container">
         <h2>Créer un Catalogue</h2>
+        <!-- Formulaire pour la création d'un nouveau catalogue -->
+        <!-- Méthode POST utilisée pour envoyer les données en toute sécurité au fichier PHP "create_catalog.php" -->
         <form action="create_catalog.php" method="POST">
+            <!-- Champ pour le nom du catalogue -->
             <div class="form-group">
                 <label for="name">Nom du catalogue :</label>
+                <!-- Champ de saisie pour le nom, requis pour la validation -->
                 <input type="text" name="name" id="name" class="form-control" required>
             </div>
+            
+            <!-- Champ pour la description du catalogue -->
             <div class="form-group">
                 <label for="description">Description :</label>
+                <!-- Zone de texte pour permettre la saisie d'une description plus longue -->
                 <textarea name="description" id="description" class="form-control"></textarea>
             </div>
+
+            <!-- Champ masqué pour passer l'identifiant de l'utilisateur créateur -->
+            <!-- Ici, "userAccountId" est fixé à 1 pour simplifier (remplacé par l'ID de l'utilisateur connecté dans une application complète) -->
             <input type="hidden" name="userAccountId" value="1"> <!-- ID utilisateur simulé -->
+            
+            <!-- Bouton de soumission pour envoyer le formulaire -->
             <button type="submit" class="btn btn-primary">Créer</button>
         </form>
     </div>
