@@ -1,0 +1,78 @@
+/* styles.css */
+
+/* Style global pour la page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Couleur de fond légère */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Conteneur principal pour centrer le contenu */
+.container {
+    background-color: #ffffff; /* Fond blanc pour le contenu */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+/* Titre de la page */
+h2, h3 {
+    color: #333; /* Texte foncé pour le contraste */
+    margin-bottom: 15px;
+}
+
+/* Style pour les formulaires */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Style du bouton */
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Changement de couleur au survol */
+}
+
+/* Style pour le canvas */
+#canvas {
+    border: 1px solid #000;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Message de confirmation (exemple) */
+#confirmation {
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+}
